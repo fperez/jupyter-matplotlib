@@ -50,3 +50,27 @@ For a development installation (requires node),
     $ jupyter labextension link ./js
     $ cd js && npm run watch  
     $ # Launch jupyterlab as `jupyter lab --watch` in another terminal
+
+
+Usage
+-----
+
+Once installed, you can use this in a notebook either as a `matplotlib` backend, with code such as:
+
+```python
+%matplotlib ipympl
+import matplotlib.pyplot as plt
+
+# will display plot automatically, similar to `inline` backend
+plt.plot([0, 1, 2, 2]);
+```
+
+*or* if you prefer to manually manage figure creation and closing, you can omit the `%matplotlib` magic call and explicitly call `show()` yourself:
+
+```python
+import ipympl
+import matplotlib.pyplot as plt
+
+plt.plot([0, 1, 2, 2])
+plt.show();
+```
